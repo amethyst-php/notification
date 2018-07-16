@@ -18,7 +18,7 @@ return [
     | This is the table name used while interacting with the database
     |
     */
-    'table' => 'ore_notifications',
+    'table' => 'notifications',
 
     /*
     |--------------------------------------------------------------------------
