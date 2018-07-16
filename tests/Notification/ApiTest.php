@@ -18,7 +18,7 @@ class ApiTest extends BaseTest
      */
     public function getBaseUrl()
     {
-        return Config::get('ore.api.router.prefix').Config::get('ore.notification.http.router.prefix');
+        return Config::get('ore.api.router.prefix').Config::get('ore.notification.http.admin.router.prefix');
     }
 
     /**

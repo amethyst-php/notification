@@ -106,26 +106,57 @@ return [
 
     'http' => [
 
-        /*
-        |--------------------------------------------------------------------------
-        | Class name controller
-        |--------------------------------------------------------------------------
-        |
-        | Here you may define the controller that will handle all the requests
-        |
-        */
-        'controller' => Railken\LaraOre\Http\Controllers\Admin\NotificationsController::class,
+        'admin' => [
 
-        /*
-        |--------------------------------------------------------------------------
-        | Router Options
-        |--------------------------------------------------------------------------
-        |
-        | Here you may define all the options that will be used by the route group
-        |
-        */
-        'router' => [
-            'prefix' => '/admin/notifications',
+            'enabled' => true,
+
+            /*
+            |--------------------------------------------------------------------------
+            | Class name controller
+            |--------------------------------------------------------------------------
+            |
+            | Here you may define the controller that will handle all the requests
+            |
+            */
+            'controller' => Railken\LaraOre\Http\Controllers\Admin\NotificationsController::class,
+
+            /*
+            |--------------------------------------------------------------------------
+            | Router Options
+            |--------------------------------------------------------------------------
+            |
+            | Here you may define all the options that will be used by the route group
+            |
+            */
+            'router' => [
+                'prefix' => '/admin/notifications',
+            ],
         ],
+        'user' => [
+
+            'enabled' => true,
+
+            /*
+            |--------------------------------------------------------------------------
+            | Class name controller
+            |--------------------------------------------------------------------------
+            |
+            | Here you may define the controller that will handle all the requests
+            |
+            */
+            'controller' => Railken\LaraOre\Http\Controllers\NotificationsController::class,
+
+            /*
+            |--------------------------------------------------------------------------
+            | Router Options
+            |--------------------------------------------------------------------------
+            |
+            | Here you may define all the options that will be used by the route group
+            |
+            */
+            'router' => [
+                'prefix' => '/notifications',
+            ],
+        ]
     ],
 ];
