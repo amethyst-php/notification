@@ -2,6 +2,7 @@
 
 namespace Railken\LaraOre;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use Railken\LaraOre\Api\Support\Router;
@@ -39,23 +40,31 @@ class NotificationServiceProvider extends ServiceProvider
      */
     public function loadRoutes()
     {
-        Router::group(Config::get('ore.notification.http.admin.router'), function ($router) {
-            $controller = Config::get('ore.notification.http.admin.controller');
+        $config = Config::get('ore.notification.http.admin');
 
-            $router->get('/', ['uses' => $controller.'@index']);
-            $router->post('/', ['uses' => $controller.'@create']);
-            $router->put('/{id}', ['uses' => $controller.'@update']);
-            $router->delete('/{id}', ['uses' => $controller.'@remove']);
-            $router->get('/{id}', ['uses' => $controller.'@show']);
-        });
+        if (Arr::get($config, 'enabled')) {
+            Router::group('admin', Arr::get($config, 'router'), function ($router) use ($config) {
+                $controller = Arr::get($config, 'controller');
 
-        Router::group(Config::get('ore.notification.http.user.router'), function ($router) {
-            $controller = Config::get('ore.notification.http.user.controller');
+                $router->get('/', ['uses' => $controller.'@index']);
+                $router->post('/', ['uses' => $controller.'@create']);
+                $router->put('/{id}', ['uses' => $controller.'@update']);
+                $router->delete('/{id}', ['uses' => $controller.'@remove']);
+                $router->get('/{id}', ['uses' => $controller.'@show']);
+            });
+        }
 
-            $router->get('/', ['uses' => $controller.'@index']);
-            $router->get('/{id}', ['uses' => $controller.'@show']);
-            $router->post('/{id}/read', ['uses' => $controller.'@markAsRead']);
-            $router->post('/{id}/unread', ['uses' => $controller.'@markAsUnread']);
-        });
+        $config = Config::get('ore.notification.http.user');
+
+        if (Arr::get($config, 'enabled')) {
+            Router::group('admin', Arr::get($config, 'router'), function ($router) use ($config) {
+                $controller = Arr::get($config, 'controller');
+
+                $router->get('/', ['uses' => $controller.'@index']);
+                $router->get('/{id}', ['uses' => $controller.'@show']);
+                $router->post('/{id}/read', ['uses' => $controller.'@markAsRead']);
+                $router->post('/{id}/unread', ['uses' => $controller.'@markAsUnread']);
+            });
+        }
     }
 }

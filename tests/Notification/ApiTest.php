@@ -4,7 +4,6 @@ namespace Railken\LaraOre\Tests\Notification;
 
 use Illuminate\Support\Facades\Config;
 use Railken\LaraOre\Notification\NotificationFaker;
-use Railken\LaraOre\Notification\NotificationManager;
 use Railken\LaraOre\Support\Testing\ApiTestableTrait;
 
 class ApiTest extends BaseTest
@@ -23,8 +22,6 @@ class ApiTest extends BaseTest
 
     /**
      * Test common requests.
-     *
-     * @return void
      */
     public function testSuccessCommon()
     {

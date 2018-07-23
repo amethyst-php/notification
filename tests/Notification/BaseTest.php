@@ -2,17 +2,8 @@
 
 namespace Railken\LaraOre\Tests\Notification;
 
-use Illuminate\Support\Facades\File;
-
 abstract class BaseTest extends \Orchestra\Testbench\TestCase
 {
-    protected function getPackageProviders($app)
-    {
-        return [
-            \Railken\LaraOre\NotificationServiceProvider::class,
-        ];
-    }
-
     /**
      * Setup the test environment.
      */
@@ -28,5 +19,12 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         // $this->artisan('vendor:publish', ['--provider' => 'Railken\LaraOre\NotificationServiceProvider', '--force' => true]);
 
         $this->artisan('migrate');
+    }
+
+    protected function getPackageProviders($app)
+    {
+        return [
+            \Railken\LaraOre\NotificationServiceProvider::class,
+        ];
     }
 }

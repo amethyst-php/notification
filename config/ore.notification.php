@@ -1,7 +1,6 @@
 <?php
 
 return [
-    
     /*
     |--------------------------------------------------------------------------
     | User Entity
@@ -101,62 +100,30 @@ return [
     |
     */
     'attributes' => [
-
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Http configuration
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the routes
+    |
+    */
     'http' => [
-
         'admin' => [
-
-            'enabled' => true,
-
-            /*
-            |--------------------------------------------------------------------------
-            | Class name controller
-            |--------------------------------------------------------------------------
-            |
-            | Here you may define the controller that will handle all the requests
-            |
-            */
+            'enabled'    => true,
             'controller' => Railken\LaraOre\Http\Controllers\Admin\NotificationsController::class,
-
-            /*
-            |--------------------------------------------------------------------------
-            | Router Options
-            |--------------------------------------------------------------------------
-            |
-            | Here you may define all the options that will be used by the route group
-            |
-            */
-            'router' => [
-                'prefix' => '/admin/notifications',
+            'router'     => [
+                'prefix'      => '/admin/notifications',
             ],
         ],
         'user' => [
-
-            'enabled' => true,
-
-            /*
-            |--------------------------------------------------------------------------
-            | Class name controller
-            |--------------------------------------------------------------------------
-            |
-            | Here you may define the controller that will handle all the requests
-            |
-            */
+            'enabled'    => true,
             'controller' => Railken\LaraOre\Http\Controllers\NotificationsController::class,
-
-            /*
-            |--------------------------------------------------------------------------
-            | Router Options
-            |--------------------------------------------------------------------------
-            |
-            | Here you may define all the options that will be used by the route group
-            |
-            */
-            'router' => [
-                'prefix' => '/notifications',
+            'router'     => [
+                'prefix'      => '/notifications',
             ],
-        ]
+        ],
     ],
 ];
