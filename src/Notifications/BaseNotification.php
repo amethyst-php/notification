@@ -20,8 +20,7 @@ class BaseNotification extends IlluminateNotification implements ShouldQueue
      *
      * @param event  $event
      * @param string $message
-     * @param array $options
-     * @return void
+     * @param array  $options
      */
     public function __construct($event, $message, array $options = [])
     {
@@ -41,7 +40,7 @@ class BaseNotification extends IlluminateNotification implements ShouldQueue
     public function via($notifiable)
     {
         return ['database'];
-    }   
+    }
 
     /**
      * Get the array representation of the notification.
@@ -53,10 +52,10 @@ class BaseNotification extends IlluminateNotification implements ShouldQueue
     public function toArray($notifiable)
     {
         return [
-            'message' => $this->message,
-            'event' => $this->event,
+            'message'     => $this->message,
+            'event'       => $this->event,
             'event_class' => $this->event_class,
-            'options' => $this->options,
+            'options'     => $this->options,
         ];
     }
 }
