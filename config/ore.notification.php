@@ -115,10 +115,10 @@ return [
             'enabled'    => true,
             'controller' => Railken\LaraOre\Http\Controllers\Admin\NotificationsController::class,
             'router'     => [
-                'prefix'      => '/admin/notifications',
+                'prefix'      => '/notifications',
             ],
         ],
-        'user' => [
+        'app' => [
             'enabled'    => true,
             'controller' => Railken\LaraOre\Http\Controllers\NotificationsController::class,
             'router'     => [
