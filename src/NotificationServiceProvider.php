@@ -19,8 +19,8 @@ class NotificationServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutes();
 
-        config(['ore.permission.managers' => array_merge(Config::get('ore.permission.managers', []), [
-            //\Railken\LaraOre\Notification\NotificationManager::class,
+        config(['ore.managers' => array_merge(Config::get('ore.managers', []), [
+            \Railken\LaraOre\Notification\NotificationManager::class,
         ])]);
     }
 
