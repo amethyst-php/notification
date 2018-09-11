@@ -118,9 +118,9 @@ return [
                 'prefix'      => '/notifications',
             ],
         ],
-        'app' => [
+        'user' => [
             'enabled'    => true,
-            'controller' => Railken\LaraOre\Http\Controllers\NotificationsController::class,
+            'controller' => Railken\LaraOre\Http\Controllers\User\NotificationsController::class,
             'router'     => [
                 'prefix'      => '/notifications',
             ],

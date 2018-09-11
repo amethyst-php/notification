@@ -54,10 +54,10 @@ class NotificationServiceProvider extends ServiceProvider
             });
         }
 
-        $config = Config::get('ore.notification.http.app');
+        $config = Config::get('ore.notification.http.user');
 
         if (Arr::get($config, 'enabled')) {
-            Router::group('app', Arr::get($config, 'router'), function ($router) use ($config) {
+            Router::group('user', Arr::get($config, 'router'), function ($router) use ($config) {
                 $controller = Arr::get($config, 'controller');
 
                 $router->get('/', ['uses' => $controller.'@index']);

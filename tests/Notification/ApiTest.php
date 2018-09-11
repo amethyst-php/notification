@@ -3,8 +3,8 @@
 namespace Railken\LaraOre\Tests\Notification;
 
 use Illuminate\Support\Facades\Config;
-use Railken\LaraOre\Notification\NotificationFaker;
 use Railken\LaraOre\Api\Support\Testing\TestableBaseTrait;
+use Railken\LaraOre\Notification\NotificationFaker;
 
 class ApiTest extends BaseTest
 {
