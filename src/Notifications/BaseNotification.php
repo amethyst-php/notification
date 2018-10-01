@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\LaraOre\Notifications;
+namespace Railken\Amethyst\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -18,7 +18,7 @@ class BaseNotification extends IlluminateNotification implements ShouldQueue
     /**
      * Create a new event instance.
      *
-     * @param event  $event
+     * @param mixed  $event
      * @param string $message
      * @param array  $options
      */

@@ -1,18 +1,16 @@
 <?php
 
-namespace Railken\LaraOre\Http\Controllers\User;
+namespace Railken\Amethyst\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
-use Railken\LaraOre\Api\Http\Controllers\RestController;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestRemoveTrait;
-use Railken\LaraOre\Notification\NotificationManager;
+use Railken\Amethyst\Api\Http\Controllers\RestController;
+use Railken\Amethyst\Api\Http\Controllers\Traits\RestIndexTrait;
+use Railken\Amethyst\Managers\NotificationManager;
 
 class NotificationsController extends RestController
 {
     use RestIndexTrait;
-    use RestRemoveTrait;
 
     /**
      * List of params that can be used to perform a search in the index.
@@ -39,11 +37,11 @@ class NotificationsController extends RestController
     /**
      * Create a new instance for query.
      *
-     * @return \Illuminate\DataBase\Query\Builder
+     * @return \Illuminate\DataBase\Eloquent\Builder
      */
     public function getQuery()
     {
-        return $this->manager->repository->getQuery()->where(['notifiable_type' => Config::get('ore.notification.user'), 'notifiable_id' => $this->getUser()->id]);
+        return $this->manager->repository->getQuery()->where(['notifiable_type' => Config::get('amethyst.notification.managers.notification.user'), 'notifiable_id' => $this->getUser()->id]);
     }
 
     /**
@@ -52,10 +50,11 @@ class NotificationsController extends RestController
      * @param int                      $id
      * @param \Illuminate\Http\Request $request
      *
-     * @return \Illuminate\Http\Response
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function markAsRead($id, Request $request)
     {
+        /** @var \Railken\Amethyst\Models\Notification */
         $resource = $this->manager->getRepository()->findOneById($id);
 
         if (!$resource && $resource->notifiable->id !== $this->getUser()->id) {
@@ -73,10 +72,11 @@ class NotificationsController extends RestController
      * @param int                      $id
      * @param \Illuminate\Http\Request $request
      *
-     * @return \Illuminate\Http\Response
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function markAsUnread($id, Request $request)
     {
+        /** @var \Railken\Amethyst\Models\Notification */
         $resource = $this->manager->getRepository()->findOneById($id);
 
         if (!$resource && $resource->notifiable->id !== $this->getUser()->id) {

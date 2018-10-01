@@ -12,7 +12,7 @@ class CreateNotificationsTable extends Migration
      */
     public function up()
     {
-        Schema::create(Config::get('ore.notification.table'), function (Blueprint $table) {
+        Schema::create(Config::get('amethyst.notification.managers.notification.table'), function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('type');
             $table->morphs('notifiable');
@@ -27,6 +27,6 @@ class CreateNotificationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(Config::get('ore.notification.table'));
+        Schema::dropIfExists(Config::get('amethyst.notification.managers.notification.table'));
     }
 }
