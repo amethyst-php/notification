@@ -37,11 +37,11 @@ class NotificationsController extends RestController
     /**
      * Create a new instance for query.
      *
-     * @return \Illuminate\DataBase\Eloquent\Builder
+     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function getQuery()
     {
-        return $this->manager->repository->getQuery()->where(['notifiable_type' => Config::get('amethyst.notification.managers.notification.user'), 'notifiable_id' => $this->getUser()->id]);
+        return $this->getManager()->getRepository()->getQuery()->where(['notifiable_type' => Config::get('amethyst.notification.managers.notification.user'), 'notifiable_id' => $this->getUser()->id]);
     }
 
     /**
@@ -55,7 +55,7 @@ class NotificationsController extends RestController
     public function markAsRead($id, Request $request)
     {
         /** @var \Railken\Amethyst\Models\Notification */
-        $resource = $this->manager->getRepository()->findOneById($id);
+        $resource = $this->getManager()->getRepository()->findOneById($id);
 
         if (!$resource && $resource->notifiable->id !== $this->getUser()->id) {
             return $this->not_found();
@@ -77,7 +77,7 @@ class NotificationsController extends RestController
     public function markAsUnread($id, Request $request)
     {
         /** @var \Railken\Amethyst\Models\Notification */
-        $resource = $this->manager->getRepository()->findOneById($id);
+        $resource = $this->getManager()->getRepository()->findOneById($id);
 
         if (!$resource && $resource->notifiable->id !== $this->getUser()->id) {
             return $this->not_found();
