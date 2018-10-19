@@ -3,21 +3,21 @@
 namespace Railken\Amethyst\Models;
 
 use Illuminate\Notifications\DatabaseNotification as Model;
-use Illuminate\Support\Facades\Config;
-use Railken\Amethyst\Schemas\NotificationSchema;
+use Railken\Amethyst\Common\ConfigurableModel;
 use Railken\Lem\Contracts\EntityContract;
 
 class Notification extends Model implements EntityContract
 {
+    use ConfigurableModel;
+
     /**
-     * Creates a new instance of the model.
+     * Create a new Eloquent model instance.
      *
      * @param array $attributes
      */
     public function __construct(array $attributes = [])
     {
+        $this->ini('amethyst.notification.data.notification');
         parent::__construct($attributes);
-        $this->table = Config::get('amethyst.notification.managers.notification.table');
-        $this->fillable = (new NotificationSchema())->getNameFillableAttributes();
     }
 }
