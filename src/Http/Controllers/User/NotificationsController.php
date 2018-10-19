@@ -41,7 +41,7 @@ class NotificationsController extends RestController
      */
     public function getQuery()
     {
-        return $this->getManager()->getRepository()->getQuery()->where(['notifiable_type' => Config::get('amethyst.notification.managers.notification.user'), 'notifiable_id' => $this->getUser()->id]);
+        return $this->getManager()->getRepository()->getQuery()->where(['notifiable_type' => Config::get('amethyst.notification.data.notification.user'), 'notifiable_id' => $this->getUser()->id]);
     }
 
     /**
