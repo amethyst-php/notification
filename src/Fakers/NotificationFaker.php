@@ -16,7 +16,7 @@ class NotificationFaker extends Faker
         $faker = Factory::create();
 
         $bag = new Bag();
-        $bag->set('id', '00a76d64-822a-4621-9279-72ceff67f439');
+        $bag->set('id', md5(microtime(true)));
         $bag->set('type', "Railken\Amethyst\Notifications\BaseNotification");
         $bag->set('notifiable_type', 'App\\User');
         $bag->set('notifiable_id', 1);

@@ -39,9 +39,10 @@ class NotificationServiceProvider extends CommonServiceProvider
             Router::group('user', Arr::get($config, 'router'), function ($router) use ($config) {
                 $controller = Arr::get($config, 'controller');
 
-                $router->get('/', ['uses' => $controller.'@index']);
-                $router->post('/{id}/read', ['uses' => $controller.'@markAsRead']);
-                $router->post('/{id}/unread', ['uses' => $controller.'@markAsUnread']);
+                $router->get('/', ['as' => 'index', 'uses' => $controller.'@index']);
+                $router->get('/{id}', ['as' => 'show', 'uses' => $controller.'@show']);
+                $router->post('/{id}/read', ['as' => 'read', 'uses' => $controller.'@markAsRead']);
+                $router->post('/{id}/unread', ['as' => 'unread', 'uses' => $controller.'@markAsUnread']);
             });
         }
     }

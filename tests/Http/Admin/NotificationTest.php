@@ -25,9 +25,9 @@ class NotificationTest extends BaseTest
     protected $group = 'admin';
 
     /**
-     * Base path config.
+     * Route name.
      *
      * @var string
      */
-    protected $config = 'amethyst.notification.http.admin.notification';
+    protected $route = 'admin.notification';
 }

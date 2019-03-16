@@ -16,10 +16,14 @@ class NotificationSchema extends Schema
     {
         return [
             Attributes\IdAttribute::make()
-                ->setFillable(true),
-            Attributes\TextAttribute::make('type'),
-            Attributes\TextAttribute::make('notifiable_type'),
-            Attributes\TextAttribute::make('notifiable_id'),
+                ->setFillable(true)
+                ->setRequired(true),
+            Attributes\TextAttribute::make('type')
+                ->setRequired(true),
+            Attributes\TextAttribute::make('notifiable_type')
+                ->setRequired(true),
+            Attributes\TextAttribute::make('notifiable_id')
+                ->setRequired(true),
             Attributes\ObjectAttribute::make('data'),
             Attributes\DateTimeAttribute::make('read_at'),
             Attributes\CreatedAtAttribute::make(),

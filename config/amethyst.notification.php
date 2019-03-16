@@ -36,11 +36,11 @@ return [
     'http' => [
         'admin' => [
             'notification' => [
-                'enabled'     => true,
-                'controller'  => Railken\Amethyst\Http\Controllers\Admin\NotificationsController::class,
-                'router'      => [
-                    'as'        => 'notification.',
-                    'prefix'    => '/notifications',
+                'enabled'    => true,
+                'controller' => Railken\Amethyst\Http\Controllers\Admin\NotificationsController::class,
+                'router'     => [
+                    'as'     => 'notification.',
+                    'prefix' => '/notifications',
                 ],
             ],
         ],
@@ -49,7 +49,8 @@ return [
                 'enabled'    => true,
                 'controller' => Railken\Amethyst\Http\Controllers\User\NotificationsController::class,
                 'router'     => [
-                    'prefix'      => '/notifications',
+                    'as'     => 'notification.',
+                    'prefix' => '/notifications',
                 ],
             ],
         ],

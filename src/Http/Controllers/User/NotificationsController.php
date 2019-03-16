@@ -5,12 +5,13 @@ namespace Railken\Amethyst\Http\Controllers\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Railken\Amethyst\Api\Http\Controllers\RestController;
-use Railken\Amethyst\Api\Http\Controllers\Traits\RestIndexTrait;
+use Railken\Amethyst\Api\Http\Controllers\Traits;
 use Railken\Amethyst\Managers\NotificationManager;
 
 class NotificationsController extends RestController
 {
-    use RestIndexTrait;
+    use Traits\RestIndexTrait;
+    use Traits\RestShowTrait;
 
     /**
      * List of params that can be used to perform a search in the index.
