@@ -3,7 +3,6 @@
 namespace Railken\Amethyst\Http\Controllers\User;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Config;
 use Railken\Amethyst\Api\Http\Controllers\RestController;
 use Railken\Amethyst\Api\Http\Controllers\Traits;
 use Railken\Amethyst\Managers\NotificationManager;
