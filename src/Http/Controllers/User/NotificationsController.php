@@ -31,6 +31,8 @@ class NotificationsController extends RestController
     public function __construct(NotificationManager $manager)
     {
         $this->manager = $manager;
+
+        parent::__construct();
     }
 
     /**
