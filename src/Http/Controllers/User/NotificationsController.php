@@ -58,7 +58,7 @@ class NotificationsController extends RestController
         /** @var \Railken\Amethyst\Models\Notification */
         $resource = $this->getManager()->getRepository()->findOneById($id);
 
-        if (!$resource && $resource->notifiable->id !== $this->getUser()->id) {
+        if (!$resource || $resource->notifiable->id !== $this->getUser()->id) {
             return $this->not_found();
         }
 
@@ -80,7 +80,7 @@ class NotificationsController extends RestController
         /** @var \Railken\Amethyst\Models\Notification */
         $resource = $this->getManager()->getRepository()->findOneById($id);
 
-        if (!$resource && $resource->notifiable->id !== $this->getUser()->id) {
+        if (!$resource || $resource->notifiable->id !== $this->getUser()->id) {
             return $this->not_found();
         }
 
