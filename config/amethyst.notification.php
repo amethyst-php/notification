@@ -21,7 +21,7 @@ return [
             'authorizer' => Railken\Amethyst\Authorizers\NotificationAuthorizer::class,
             'faker'      => Railken\Amethyst\Fakers\NotificationFaker::class,
             'manager'    => Railken\Amethyst\Managers\NotificationManager::class,
-            'user'       => App\User::class,
+            'user'       => App\Models\User::class,
         ],
     ],
 
