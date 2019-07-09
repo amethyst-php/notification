@@ -13,14 +13,14 @@ return [
         'notification' => [
             'table'      => 'notifications',
             'comment'    => 'Notification',
-            'model'      => Railken\Amethyst\Models\Notification::class,
-            'schema'     => Railken\Amethyst\Schemas\NotificationSchema::class,
-            'repository' => Railken\Amethyst\Repositories\NotificationRepository::class,
-            'serializer' => Railken\Amethyst\Serializers\NotificationSerializer::class,
-            'validator'  => Railken\Amethyst\Validators\NotificationValidator::class,
-            'authorizer' => Railken\Amethyst\Authorizers\NotificationAuthorizer::class,
-            'faker'      => Railken\Amethyst\Fakers\NotificationFaker::class,
-            'manager'    => Railken\Amethyst\Managers\NotificationManager::class,
+            'model'      => Amethyst\Models\Notification::class,
+            'schema'     => Amethyst\Schemas\NotificationSchema::class,
+            'repository' => Amethyst\Repositories\NotificationRepository::class,
+            'serializer' => Amethyst\Serializers\NotificationSerializer::class,
+            'validator'  => Amethyst\Validators\NotificationValidator::class,
+            'authorizer' => Amethyst\Authorizers\NotificationAuthorizer::class,
+            'faker'      => Amethyst\Fakers\NotificationFaker::class,
+            'manager'    => Amethyst\Managers\NotificationManager::class,
             'user'       => App\Models\User::class,
         ],
     ],
@@ -37,7 +37,7 @@ return [
         'admin' => [
             'notification' => [
                 'enabled'    => true,
-                'controller' => Railken\Amethyst\Http\Controllers\Admin\NotificationsController::class,
+                'controller' => Amethyst\Http\Controllers\Admin\NotificationsController::class,
                 'router'     => [
                     'as'     => 'notification.',
                     'prefix' => '/notifications',
@@ -47,7 +47,7 @@ return [
         'user' => [
             'notification' => [
                 'enabled'    => true,
-                'controller' => Railken\Amethyst\Http\Controllers\User\NotificationsController::class,
+                'controller' => Amethyst\Http\Controllers\User\NotificationsController::class,
                 'router'     => [
                     'as'     => 'notification.',
                     'prefix' => '/notifications',

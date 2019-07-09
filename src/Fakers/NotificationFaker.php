@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Amethyst\Fakers;
+namespace Amethyst\Fakers;
 
 use Faker\Factory;
 use Railken\Bag;
@@ -17,7 +17,7 @@ class NotificationFaker extends Faker
 
         $bag = new Bag();
         $bag->set('id', md5(microtime(true)));
-        $bag->set('type', "Railken\Amethyst\Notifications\BaseNotification");
+        $bag->set('type', "Amethyst\Notifications\BaseNotification");
         $bag->set('notifiable_type', 'App\\User');
         $bag->set('notifiable_id', 1);
         $bag->set('data', ['message' => 'A notification.']);

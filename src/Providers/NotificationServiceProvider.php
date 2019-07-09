@@ -1,11 +1,11 @@
 <?php
 
-namespace Railken\Amethyst\Providers;
+namespace Amethyst\Providers;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
-use Railken\Amethyst\Api\Support\Router;
-use Railken\Amethyst\Common\CommonServiceProvider;
+use Amethyst\Api\Support\Router;
+use Amethyst\Common\CommonServiceProvider;
 
 class NotificationServiceProvider extends CommonServiceProvider
 {
@@ -25,7 +25,7 @@ class NotificationServiceProvider extends CommonServiceProvider
     {
         parent::register();
 
-        $this->app->register(\Railken\Amethyst\Providers\UserServiceProvider::class);
+        $this->app->register(\Amethyst\Providers\UserServiceProvider::class);
     }
 
     /**

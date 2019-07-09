@@ -1,11 +1,11 @@
 <?php
 
-namespace Railken\Amethyst\Http\Controllers\User;
+namespace Amethyst\Http\Controllers\User;
 
 use Illuminate\Http\Request;
-use Railken\Amethyst\Api\Http\Controllers\RestController;
-use Railken\Amethyst\Api\Http\Controllers\Traits;
-use Railken\Amethyst\Managers\NotificationManager;
+use Amethyst\Api\Http\Controllers\RestController;
+use Amethyst\Api\Http\Controllers\Traits;
+use Amethyst\Managers\NotificationManager;
 
 class NotificationsController extends RestController
 {
@@ -55,7 +55,7 @@ class NotificationsController extends RestController
      */
     public function markAsRead($id, Request $request)
     {
-        /** @var \Railken\Amethyst\Models\Notification */
+        /** @var \Amethyst\Models\Notification */
         $resource = $this->getManager()->getRepository()->findOneById($id);
 
         if (!$resource || $resource->notifiable->id !== $this->getUser()->id) {
@@ -77,7 +77,7 @@ class NotificationsController extends RestController
      */
     public function markAsUnread($id, Request $request)
     {
-        /** @var \Railken\Amethyst\Models\Notification */
+        /** @var \Amethyst\Models\Notification */
         $resource = $this->getManager()->getRepository()->findOneById($id);
 
         if (!$resource || $resource->notifiable->id !== $this->getUser()->id) {
