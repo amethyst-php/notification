@@ -2,8 +2,8 @@
 
 namespace Amethyst\Models;
 
-use Illuminate\Notifications\DatabaseNotification as Model;
 use Amethyst\Common\ConfigurableModel;
+use Illuminate\Notifications\DatabaseNotification as Model;
 use Railken\Lem\Contracts\EntityContract;
 
 class Notification extends Model implements EntityContract

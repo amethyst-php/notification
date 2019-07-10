@@ -2,10 +2,10 @@
 
 namespace Amethyst\Http\Controllers\User;
 
-use Illuminate\Http\Request;
 use Amethyst\Api\Http\Controllers\RestController;
 use Amethyst\Api\Http\Controllers\Traits;
 use Amethyst\Managers\NotificationManager;
+use Illuminate\Http\Request;
 
 class NotificationsController extends RestController
 {
