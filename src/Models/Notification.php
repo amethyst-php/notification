@@ -2,7 +2,7 @@
 
 namespace Amethyst\Models;
 
-use Amethyst\Common\ConfigurableModel;
+use Amethyst\Core\ConfigurableModel;
 use Illuminate\Notifications\DatabaseNotification as Model;
 use Railken\Lem\Contracts\EntityContract;
 

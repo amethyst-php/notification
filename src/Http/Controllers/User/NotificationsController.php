@@ -2,8 +2,8 @@
 
 namespace Amethyst\Http\Controllers\User;
 
-use Amethyst\Api\Http\Controllers\RestController;
-use Amethyst\Api\Http\Controllers\Traits;
+use Amethyst\Core\Http\Controllers\RestController;
+use Amethyst\Core\Http\Controllers\Traits;
 use Amethyst\Managers\NotificationManager;
 use Illuminate\Http\Request;
 
