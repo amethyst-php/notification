@@ -1,6 +1,6 @@
 # amethyst-notification
 
-[![Build Status](https://travis-ci.org/amethyst-php/notification.svg?branch=master)](https://travis-ci.org/amethyst-php/notification)
+[![Action Status](https://github.com/amethyst-php/notification/workflows/test/badge.svg)](https://github.com/amethyst-php/notification/actions)
 
 [Amethyst](https://github.com/amethyst-php/amethyst) package.
 
