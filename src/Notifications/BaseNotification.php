@@ -10,24 +10,19 @@ class BaseNotification extends IlluminateNotification implements ShouldQueue
 {
     use Queueable;
 
-    public $event;
     public $message;
-    public $event_class;
     public $options;
 
     /**
      * Create a new event instance.
      *
-     * @param mixed  $event
      * @param string $message
      * @param array  $options
      */
-    public function __construct($event, $message, array $options = [])
+    public function __construct($message, array $options = [])
     {
-        $this->event = $event;
         $this->message = $message;
         $this->options = $options;
-        $this->event_class = get_class($event);
     }
 
     /**
@@ -53,8 +48,6 @@ class BaseNotification extends IlluminateNotification implements ShouldQueue
     {
         return [
             'message'     => $this->message,
-            'event'       => $this->event,
-            'event_class' => $this->event_class,
             'options'     => $this->options,
         ];
     }
