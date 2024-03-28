@@ -3,9 +3,9 @@
     "keywords": ["laravel", "amethyst", "amethyst-notification", "notification"],
     "license": "MIT",
     "require": {
-        "php": ">=7.2",
-        "amethyst/core": "0.2.*",
-        "amethyst/user": "0.2.*"
+        "php": ">=8.2",
+        "amethyst/core": "0.3.*",
+        "amethyst/user": "0.3.*"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
